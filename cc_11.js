@@ -100,3 +100,25 @@ const library = new Library();
 library.addBook(book1);
 library.listBooks();
 // Expected output: "Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456, Copies: 4"
+
+// Task 5 - Implementing book returns
+
+returnBook(borrowerId, isbn) {
+
+    let book = this.book.find(book => book.isbn === isbn); //Finds book by ISBN
+
+    let borrower = this.borrowers.find(borrower => borrower.borrowerId === borrowerID); //Find the borrower by Id
+
+    if(book && borrower && borrower.borrowerBooks.includes(books.title)) {
+        book.updateCopies(1); //Increase available book copies
+        borrower.returnBook(book.title);
+    } else {
+        console.log("Book not in borrower's account");
+    }; //Removes book from borrower's books
+};
+
+library.returnBook(201, 123456);
+console.log(book1.getDetails());
+// Expected output: "Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456, Copies: 4"
+console.log(borrower1.borrowedBooks);
+// Expected output: []
